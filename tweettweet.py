@@ -21,12 +21,11 @@ for follower in limit_handel(tweepy.Cursor(api.followers).items()):
     follower.follow()
 
 search_string = 'python'
-numtweets = 2
+num_tweets = 2
 
 for tweet in tweepy.Cursor(api.search, search_string).items(2):
     try:
         tweet.favorite()
         print('I liked that tweet ')
     except StopIteration:
-        print('no tweets availiable')
-
+        print('no tweets available')
